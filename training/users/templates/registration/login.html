@@ -1,0 +1,61 @@
+{% extends 'corso/base.html' %}
+
+{% load static %}
+{% block content %}
+    <!-- Header -->
+    <header id="header" class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="white">We are Here to Serve You</h2>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+
+    <!-- Registration -->
+   
+                <div class="col-md-4">
+                    <h6> Login Here</h6>
+                    
+                     
+                
+                    <!-- Registration Form -->
+                    <div class="form-container">
+                        <form method="post" action="{% url 'login' %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <input type="text" class="form-control-input" id="username" name="username" required>
+                                <label class="label-control" for="username">Username</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="password" class="form-control-input" id="rpass1" name="rpass1" required>
+                                <label class="label-control" for="rpass1">Password</label>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                                             
+                            <div class="form-group">
+                                <button type="submit" class="form-control-submit-button">LOGIN</button>
+                            </div>
+                            <div class="form-message">
+                                <div id="rmsgSubmit" class="h3 text-center hidden"></div>
+                            </div>
+                        </form>
+                        <div class="form-group">
+                            <small class="text-muted">
+                                Need an Account? <a class="ml-2" href="{% url 'register' %}">Sign Up</a>
+                            </small>
+                        </div>
+                    </div> <!-- end of form-container -->
+                    <!-- end of registration form -->
+                    
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of form-1 -->
+    <!-- end of registration -->
+{% endblock %}
